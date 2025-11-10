@@ -40,3 +40,54 @@
 .read-the-docs {
   color: #888;
 }
+
+.card-film {
+  
+  margin-bottom: 20px;
+  max-height:100%;
+  border: brown 2px solid;
+  border-radius: 25px;
+  background-color:oklch(13% 0.028 261.692) ;
+  
+  
+
+
+}
+
+.card-film button{
+  margin: 5px;
+  border: black 2px solid;;
+}
+.card-film img{
+  border-radius: 25px;
+  
+}
+
+.fav {
+  color: red;
+  background-color: oklch(28.3% 0.141 291.089);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.fav:hover {
+  background-color: oklch(35% 0.2 291); /* colore un po' più chiaro */
+  color: white;
+  transform: scale(1.05); /* leggera ingrandita */
+}
+
+.watch {
+  color: black;
+  background-color: oklch(43.2% 0.095 166.913);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.watch:hover {
+  background-color: oklch(50% 0.12 167); /* colore più luminoso */
+  color: white;
+  transform: scale(1.05);
+}
+
+
+.film-list{height: 100%;}
