@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import CardFilm from "../components/CardFilm";
+import Hero from "../components/Hero.jsx";
 
 export default function HomePage() {
     const [films, setFilms] = useState([]);
-    // ...tutta la tua logica di fetch, etc...
+   
     const BASE_URL = import.meta.env.VITE_BASE_URL
     const API_KEY = import.meta.env.VITE_TOKEN
 
@@ -33,18 +34,21 @@ export default function HomePage() {
     };
 
 return (
-        // Wrapper per lo sfondo
-        <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+        // 2. CAMBIA lo sfondo da grigio a nero per lo stile Netflix
+        <div className="bg-black min-h-screen">
             
-            {/* --- MODIFICHE QUI --- */}
-            {/* 1. Ho rimosso la classe 'container' per la piena larghezza */}
-            {/* 2. Ho aggiunto 'px-8' (al posto di 'p-8') per avere solo padding 
-                  orizzontale e 'py-12' per quello verticale */}
-            <div className="mx-auto px-8 py-12"> 
+            {/* 3. AGGIUNGI il componente Hero qui! */}
+            <Hero />
 
-                {/* --- MODIFICHE QUI --- */}
-                {/* 3. Ho aggiunto '2xl:grid-cols-6' per mostrare 6 colonne 
-                      su schermi molto grandi (sopra 1536px) */}
+            {/* 4. Questa è la tua griglia di film */}
+            {/* Aggiungiamo -mt-20 e z-10 per sovrapporla leggermente
+                al fondo sfumato della Hero, stile Netflix */}
+            <div className="mx-auto px-8 py-12 relative z-10 -mt-20"> 
+
+                {/* Aggiungi un titolo per la sezione dei film */}
+                <h2 className="text-3xl font-bold text-white mb-6">Popolari ora</h2>
+                
+                {/* La tua griglia di film (già corretta) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 
                             lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 
                             gap-8 justify-items-center">
