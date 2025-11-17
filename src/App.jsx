@@ -22,9 +22,6 @@ function App() {
             per lasciare che sia la pagina (HomePage) a decidere lo sfondo */}
         <main className="flex-1"> {/* MODIFICA QUI */}
           <Routes>
-            {/* 2. RIMUOVI questa rotta, la Hero andrà in HomePage */}
-            {/* <Route path="/hero" element={<Hero />} /> */}
-            
             {/* Queste rotte sono corrette */}
             <Route path="/" element={<HomePage />} />
             <Route path='/mylist' element={<FavoritesPage/>} />

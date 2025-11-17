@@ -1,10 +1,12 @@
 // In pages/Details.jsx
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { FavoritesContext } from '../context/FavouriteContext';
 
 export default function Details() {
    
     const { filmId } = useParams();
+    const { favorites, toggleFavorite } = useContext(FavoritesContext);
     
     const [filmDetails, setFilmDetails] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -67,6 +69,8 @@ export default function Details() {
         ? `https://image.tmdb.org/t/p/w500${filmDetails.poster_path}`
         : "https://via.placeholder.com/500x750?text=No+Image";
 
+    const isFavorite = favorites.some(f => f.id === filmDetails.id);
+
     return (
         // Aggiunto wrapper per lo sfondo coerente con HomePage
         <div className="bg-gray-100 dark:bg-gray-900 py-12 min-h-screen">
@@ -89,9 +93,19 @@ export default function Details() {
                         <ul className="list-inside space-y-2 text-gray-700 dark:text-gray-300">
                             <li><strong>Data di Rilascio:</strong> {filmDetails.release_date}</li>
                             <li><strong>Voto:</strong> {filmDetails.vote_average.toFixed(1)} / 10</li>
+                            
                             {/* Aggiunti i generi, che sono utili */}
                             <li><strong>Generi:</strong> {filmDetails.genres.map(g => g.name).join(', ')}</li>
                         </ul>
+                        
+                        <div className="mt-6">
+                            <button
+                                onClick={() => toggleFavorite(filmDetails)}
+                                className="fav text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-800"
+                            >
+                                {isFavorite ? '❤️' : '🤍'} Favourite
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

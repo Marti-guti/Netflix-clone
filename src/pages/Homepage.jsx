@@ -32,6 +32,7 @@ export default function HomePage() {
 return (
         // Wrapper per lo sfondo
         <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+            <Hero />
             
             {/* --- MODIFICHE QUI --- */}
             {/* 1. Ho rimosso la classe 'container' per la piena larghezza */}
