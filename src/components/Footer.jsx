@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="#" className="hover:text-white transition-colors">Privacy</a>
           <a href="#" className="hover:text-white transition-colors">Cookie</a>
         </div>
-        <p className="text-xs text-gray-500">© {new Date().getFullYear()} NetClone, Inc.</p>
+        <p className="text-xs text-gray-500">© {new Date().getFullYear()} BedFlix, Inc.</p>
       </div>
     </footer>
   );
