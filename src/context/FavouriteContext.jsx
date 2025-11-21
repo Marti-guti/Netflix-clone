@@ -1,5 +1,6 @@
 // src/context/FavoritesContext.jsx
 import React, { createContext, useState, useEffect } from "react";
+import { useContext } from "react";
 
 export const FavoritesContext = createContext();
 
@@ -27,3 +28,7 @@ export function FavoritesProvider({ children }) {
     </FavoritesContext.Provider>
   );
 }
+
+export const useFavorites = () => {
+  return useContext(FavoritesContext);
+};
