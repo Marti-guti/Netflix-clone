@@ -34,11 +34,13 @@ return (
         <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
             <Hero />
             
+            
             {/* --- MODIFICHE QUI --- */}
             {/* 1. Ho rimosso la classe 'container' per la piena larghezza */}
             {/* 2. Ho aggiunto 'px-8' (al posto di 'p-8') per avere solo padding 
                   orizzontale e 'py-12' per quello verticale */}
             <div className="mx-auto px-8 py-12"> 
+        
 
                 {/* --- MODIFICHE QUI --- */}
                 {/* 3. Ho aggiunto '2xl:grid-cols-6' per mostrare 6 colonne 
