@@ -1,5 +1,5 @@
 // In pages/Details.jsx
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { FavoritesContext } from '../context/FavouriteContext';
 
@@ -73,37 +73,46 @@ export default function Details() {
 
     return (
         // Aggiunto wrapper per lo sfondo coerente con HomePage
-        <div className="bg-gray-100 dark:bg-gray-900 py-12 min-h-screen">
+        <div className="py-12 min-h-screen">
             {/* Card centrale per contenere i dettagli */}
-            <div className="container mx-auto p-8 max-w-4xl bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-                <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">{filmDetails.title}</h1>
-                <p className="text-lg italic text-gray-600 dark:text-gray-400 mb-6">{filmDetails.tagline}</p>
-                
+            <div className="container mx-auto p-6 max-w-4xl card-modern">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                        <h1 className="text-4xl font-extrabold mb-1 text-white">{filmDetails.title}</h1>
+                        <p className="text-sm text-gray-300">{filmDetails.tagline}</p>
+                    </div>
+                </div>
+
                 <div className="flex flex-col md:flex-row gap-8">
                     <img 
                         src={imageUrl} 
                         alt={filmDetails.title} 
-                        className="w-full md:w-1/3 rounded-lg shadow-lg object-cover self-start" // self-start per allineare in alto
+                        className="w-full md:w-1/3 rounded-xl shadow-lg object-cover self-start" 
                     />
                     <div className="md:w-2/3">
-                        <h2 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Trama</h2>
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{filmDetails.overview}</p>
-                        
-                        <h3 className="text-xl font-semibold mt-6 mb-2 text-gray-900 dark:text-white">Dettagli</h3>
-                        <ul className="list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                        <h2 className="text-2xl font-semibold mb-3 text-white">Trama</h2>
+                        <p className="text-gray-300 leading-relaxed">{filmDetails.overview}</p>
+
+                        <h3 className="text-xl font-semibold mt-6 mb-2 text-white">Dettagli</h3>
+                        <ul className="list-inside space-y-2 text-gray-300">
                             <li><strong>Data di Rilascio:</strong> {filmDetails.release_date}</li>
                             <li><strong>Voto:</strong> {filmDetails.vote_average.toFixed(1)} / 10</li>
-                            
-                            {/* Aggiunti i generi, che sono utili */}
                             <li><strong>Generi:</strong> {filmDetails.genres.map(g => g.name).join(', ')}</li>
                         </ul>
-                        
-                        <div className="mt-6">
+
+                        <div className="mt-6 flex items-center gap-3">
                             <button
                                 onClick={() => toggleFavorite(filmDetails)}
-                                className="fav text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-800"
+                                className="fav btn-primary text-sm px-5 py-2.5"
                             >
                                 {isFavorite ? '❤️' : '🤍'} Favourite
+                            </button>
+
+                            <button
+                                onClick={() => window.history.back()}
+                                className="btn-ghost text-sm px-4 py-2"
+                            >
+                                Torna indietro
                             </button>
                         </div>
                     </div>
