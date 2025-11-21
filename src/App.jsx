@@ -1,4 +1,4 @@
-// src/App.jsx
+
 
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -16,21 +16,19 @@ function App() {
   return (
     <FavoritesProvider>
     <BrowserRouter>
-      {/* Il tuo div 'App' e la Navbar sono corretti */}
       <div className="App min-h-screen flex flex-col">
         <Navbar />
-        {/* Ho rimosso 'bg-black min-h-screen-1' da 'main'
-            per lasciare che sia la pagina (HomePage) a decidere lo sfondo */}
-        <main className="flex-1"> {/* MODIFICA QUI */}
+
+        <main className="flex-1"> 
           <Routes>
-            {/* Queste rotte sono corrette */}
+           
             <Route path="/" element={<HomePage />} />
             <Route path='/mylist' element={<FavoritesPage/>} />
             <Route path="/search" element={<ResearchResult />} />
             <Route path="/series" element={<Series />} />
             <Route path="/movies" element={<Films />} />
             
-            {/* 2. Aggiungi la rotta per i dettagli */}
+          
             <Route path="/details/:filmId" element={<Details />} />
           </Routes>
         </main>
