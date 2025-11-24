@@ -30,6 +30,7 @@ function App() {
             
           
             <Route path="/details/:filmId" element={<Details />} />
+            
           </Routes>
         </main>
         <Footer />

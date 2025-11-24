@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Menu, X, Search, User } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,12 +36,12 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <h1 className="text-red-600 text-xl font-bold tracking-wide">Bedflix</h1>
 
-          <ul className="hidden md:flex items-center gap-4">
-            <li><a href="/" className="text-gray-300 hover:text-white text-sm">Home</a></li>
-            <li><a href="/series" className="text-gray-300 hover:text-white text-sm">Serie TV</a></li>
-            <li><a href="/movies" className="text-gray-300 hover:text-white text-sm">Film</a></li>
-            <li><a href="/mylist" className="text-gray-300 hover:text-white text-sm">La mia lista</a></li>
-          </ul>
+<ul className="hidden md:flex items-center gap-4">
+  <li><Link to="/" className="text-gray-300 hover:text-white text-sm">Home</Link></li>
+  <li><Link to="/series" className="text-gray-300 hover:text-white text-sm">Serie TV</Link></li>
+  <li><Link to="/movies" className="text-gray-300 hover:text-white text-sm">Film</Link></li>
+  <li><Link to="/mylist" className="text-gray-300 hover:text-white text-sm">La mia lista</Link></li>
+</ul>
         </div>
 
         {/* Icone e barra di ricerca a destra */}
