@@ -2,14 +2,10 @@ import { Link } from 'react-router-dom';
 import { useFavorites } from '../context/FavouriteContext'; 
 
 export default function CardFilm({ film }) { // Rimosso 'addToWatchlist' dalle props
-
-    // 1. Recuperiamo anche watchlist e toggleWatchlist dal context
-    const { favorites, toggleFavorite, watchlist, toggleWatchlist } = useFavorites();
+      const { favorites, toggleFavorite, watchlist, toggleWatchlist } = useFavorites();
 
     const isFavorite = favorites.some(fav => fav.id === film.id);
-    
-    // 2. Controlliamo se il film è già nella watchlist per cambiare l'icona/testo
-    const isInWatchlist = watchlist.some(w => w.id === film.id);
+      const isInWatchlist = watchlist.some(w => w.id === film.id);
 
     const imageUrl = film.poster_path
         ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
@@ -17,9 +13,7 @@ export default function CardFilm({ film }) { // Rimosso 'addToWatchlist' dalle p
 
     const title = film.title || film.name || "Titolo non disponibile";
     const overview = film.overview || "Nessuna descrizione disponibile.";
-    
-    // ... logica del testo troncato (invariata) ...
-    const maxChars = 80;
+      const maxChars = 80;
     const isTruncated = overview.length > maxChars;
     const truncatedOverview = isTruncated ? overview.substring(0, maxChars) + '...' : overview;
 
@@ -54,8 +48,7 @@ export default function CardFilm({ film }) { // Rimosso 'addToWatchlist' dalle p
                         {isFavorite ? '❤️' : '🤍'} <span className="hidden sm:inline">Like</span>
                     </button>
                     
-                    {/* 3. Colleghiamo il tasto alla funzione toggleWatchlist */}
-                    <button
+                                          <button
                         onClick={() => toggleWatchlist(film)}
                         className={`flex-1 font-medium rounded-lg text-xs px-3 py-2 text-center transition-colors flex items-center justify-center gap-1
                             ${isInWatchlist 

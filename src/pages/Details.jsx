@@ -1,5 +1,4 @@
-// In pages/Details.jsx
-import { Navigate, useParams } from 'react-router-dom';
+ import { Navigate, useParams } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { FavoritesContext } from '../context/FavouriteContext';
 
@@ -72,10 +71,8 @@ export default function Details() {
     const isFavorite = favorites.some(f => f.id === filmDetails.id);
 
     return (
-        // Aggiunto wrapper per lo sfondo coerente con HomePage
-        <div className="py-12 min-h-screen">
-            {/* Card centrale per contenere i dettagli */}
-            <div className="container mx-auto p-6 max-w-4xl card-modern">
+         <div className="py-12 min-h-screen">
+                          <div className="container mx-auto p-6 max-w-4xl card-modern">
                 <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                         <h1 className="text-4xl font-extrabold mb-1 text-white">{filmDetails.title}</h1>

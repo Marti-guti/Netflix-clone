@@ -42,8 +42,7 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 border-l-4 border-red-600 pl-4">
                 {title}
             </h2>
-            {/* Griglia responsive corretta */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
                 {movies.map(film => (
                     <CardFilm
                         key={film.id}
@@ -57,12 +56,9 @@ export default function HomePage() {
 
     return (
         <div className="bg-[#141414] min-h-screen flex flex-col">
-            {/* Hero Section in alto */}
-            <Hero />
+                          <Hero />
 
-            {/* Contenitore principale delle liste */}
-            {/* z-10 e relative assicurano che il contenuto stia SOPRA lo sfondo, se mai ci fossero sovrapposizioni */}
-            <div className="relative z-10 container mx-auto px-4 mt-8 pb-10">
+                                        <div className="relative z-10 container mx-auto px-4 mt-8 pb-10">
                 <MovieSection title="Popolari su Bedflix" movies={popularFilms} />
                 <MovieSection title="I più votati" movies={topRatedFilms} />
             </div>

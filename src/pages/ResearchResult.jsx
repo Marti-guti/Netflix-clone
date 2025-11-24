@@ -8,9 +8,7 @@ export default function ResearchResult() {
 
   const BASE_URL = import.meta.env.VITE_BASE_URL;
   const API_KEY = import.meta.env.VITE_TOKEN;
-
-  // Prendi la query dai parametri
-  const queryParams = new URLSearchParams(location.search);
+   const queryParams = new URLSearchParams(location.search);
   const searchQuery = queryParams.get("query");
 
   useEffect(() => {
