@@ -10,8 +10,7 @@ export default function Series(){
     const API_KEY = import.meta.env.VITE_TOKEN;
 
     useEffect(() => {
-        // Carico le serie TV (endpoint /tv/* restituisce solo tv)
-        fetch(`${BASE_URL}/tv/popular?language=it-IT&page=1`, {
+         fetch(`${BASE_URL}/tv/popular?language=it-IT&page=1`, {
             headers: {
                 Authorization: `Bearer ${API_KEY}`,
                 'Content-Type': 'application/json'

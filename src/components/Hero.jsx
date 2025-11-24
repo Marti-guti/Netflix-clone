@@ -1,8 +1,6 @@
 import React from 'react';
 import { Play, Info } from 'lucide-react';
-
-// NOTA: Ho rimosso l'import dell'immagine locale che causava l'errore
-
+ 
 const featuredMovie = {
   title: "Chainsaw Man",
   description: "Denji è diventato Chainsaw Man, il ragazzo con il cuore del demone Pochita, ed è entrato nella Quarta divisione speciale dei Devil Hunters.",
@@ -13,21 +11,17 @@ function Hero() {
   return (
     <div className="relative h-[80vh] min-h-[500px] w-full text-white">
       
-      {/* Immagine di Sfondo */}
-      <img
+              <img
         src={featuredMovie.imageUrl}
         alt={featuredMovie.title}
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      {/* Overlay Gradiente Sinistro */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-      {/* Overlay Gradiente Inferiore */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#141414] to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#141414] to-transparent" />
 
-      {/* Contenuto */}
-      <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 lg:p-24 w-full md:w-2/3 lg:w-1/2">
+              <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 lg:p-24 w-full md:w-2/3 lg:w-1/2">
         <h1 
           className="text-4xl md:text-6xl font-black uppercase tracking-wider drop-shadow-lg"
         >

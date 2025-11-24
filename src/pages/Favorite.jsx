@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import CardFilm from "../components/CardFilm";
-import { FavoritesContext } from "../context/FavouriteContext"; // importa il context
+import { FavoritesContext } from "../context/FavouriteContext"; 
 
 export default function FavoritesPage() {
-  const { favorites, toggleFavorite } = useContext(FavoritesContext); // prendi dal context
+  const { favorites, toggleFavorite } = useContext(FavoritesContext); 
 
   return (
     <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
@@ -21,8 +21,8 @@ export default function FavoritesPage() {
               <CardFilm
                 key={film.id}
                 film={film}
-                addToFavorites={toggleFavorite}  // usa la funzione dal context
-                isFavorite={true}  // qui sicuramente è preferito
+                addToFavorites={toggleFavorite}  
+                isFavorite={true}  
               />
             ))}
           </div>

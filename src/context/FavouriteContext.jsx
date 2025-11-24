@@ -3,8 +3,7 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 export const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
-  // --- GESTIONE PREFERITI (esistente) ---
-  const [favorites, setFavorites] = useState(() => {
+   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem("favorites");
     return saved ? JSON.parse(saved) : [];
   });
@@ -20,9 +19,7 @@ export function FavoritesProvider({ children }) {
       return [...prev, film];
     });
   };
-
-  // --- GESTIONE WATCHLIST (nuova) ---
-  const [watchlist, setWatchlist] = useState(() => {
+   const [watchlist, setWatchlist] = useState(() => {
     const saved = localStorage.getItem("watchlist");
     return saved ? JSON.parse(saved) : [];
   });
@@ -40,8 +37,7 @@ export function FavoritesProvider({ children }) {
   };
 
   return (
-    // Esportiamo sia favorites che watchlist (e le relative funzioni)
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, watchlist, toggleWatchlist }}>
+     <FavoritesContext.Provider value={{ favorites, toggleFavorite, watchlist, toggleWatchlist }}>
       {children}
     </FavoritesContext.Provider>
   );

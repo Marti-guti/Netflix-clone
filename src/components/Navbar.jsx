@@ -8,9 +8,7 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const searchRef = useRef(null);
   const navigate = useNavigate();
-
-  // Chiudi la barra di ricerca cliccando fuori
-  useEffect(() => {
+   useEffect(() => {
     function handleClickOutside(event) {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
         setSearchOpen(false);
@@ -32,8 +30,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
         
-        {/* Logo + link a sinistra */}
-        <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-6">
           <h1 className="text-red-600 text-xl font-bold tracking-wide">Bedflix</h1>
 
 <ul className="hidden md:flex items-center gap-4">
@@ -44,10 +41,8 @@ export default function Navbar() {
 </ul>
         </div>
 
-        {/* Icone e barra di ricerca a destra */}
-        <div className="flex items-center gap-4">
-          {/* Barra di ricerca */}
-          <div className="relative" ref={searchRef}>
+                  <div className="flex items-center gap-4">
+                      <div className="relative" ref={searchRef}>
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="text-gray-300 hover:text-white"
@@ -69,13 +64,11 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Icona utente */}
-          <button className="text-gray-300 hover:text-white">
+                      <button className="text-gray-300 hover:text-white">
             <User size={22} />
           </button>
 
-          {/* Menu mobile */}
-          <button
+                      <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-white"
           >
@@ -84,8 +77,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menu mobile */}
-      <ul
+              <ul
         className={`absolute md:hidden top-full left-0 w-full bg-black/90 px-6 py-4 flex flex-col gap-4 transition-all duration-200 ${
           open ? "block" : "hidden"
         }`}
