@@ -1,4 +1,4 @@
-# Netflix Clone
+# Netflix Clone Gruppo Placano-Lamguanouah
 
 Questo progetto è una **Single Page Application (SPA)** sviluppata in React che replica l'interfaccia base di una piattaforma di streaming. L'applicazione visualizza una griglia di film popolari aggiornata in tempo reale tramite API esterna, permettendo all'utente di esplorare i titoli del momento.
 
@@ -16,31 +16,25 @@ Il progetto sfrutta uno stack moderno e performante. Le versioni specificate fan
 Segui questi passaggi per configurare ed eseguire il progetto localmente:
 
 1.  **Clona la repository:**
-    ```bash
-    git clone <url-tua-repository>
+    ```
+    git clone https://github.com/Marti-guti/Netflix-clone.git
     cd netflix-clone
     ```
 
 2.  **Installa le dipendenze:**
-    ```bash
+    ```
     npm install
     ```
 
 3.  **Configura le Variabili d'Ambiente:**
     Il progetto richiede un token API per comunicare con il backend di TMDB.
-    * Crea un file `.env` nella root del progetto (puoi copiare `env.example`).
-    * Inserisci le seguenti chiavi (sostituendo `tuo_token_qui` con la tua chiave reale se necessario):
-    ```env
-    VITE_BASE_URL=[https://api.themoviedb.org/3](https://api.themoviedb.org/3)
-    VITE_TOKEN=tuo_bearer_token_qui
-    ```
     > **Nota:** Nel file `env.example` fornito è presente una configurazione di esempio.
 
 4.  **Avvia il server di sviluppo:**
-    ```bash
+    ```
     npm run dev
     ```
-    L'applicazione sarà accessibile all'indirizzo mostrato nel terminale (solitamente `http://localhost:5173`).
+    L'applicazione sarà accessibile all'indirizzo mostrato nel terminale (es. `http://localhost:5173`).
 
 ##  API Utilizzate
 
